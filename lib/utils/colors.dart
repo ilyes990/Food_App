@@ -7,4 +7,4 @@ Color greyTextColor = Color(0xFF8A8A8A);
 Color whiteIcon = const Color.fromARGB(255, 243, 243, 243);
 Color blackText = Color.fromARGB(255, 22, 22, 22);
 Color darkGrey = Color(0xFF424242);
-
+Color greyLighter = Color.fromARGB(255, 238, 238, 238);

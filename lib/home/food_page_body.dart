@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
-import 'package:food_app/ui/widgets/app_Column.dart';
 import 'package:food_app/ui/widgets/big_text.dart';
 import 'package:food_app/ui/widgets/icon_with_text.dart';
 import 'package:food_app/ui/widgets/small_text.dart';
 import 'package:food_app/utils/colors.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:food_app/utils/dimensions.dart';
 
 class FoodPageBody extends StatefulWidget {
@@ -20,6 +18,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   final PageController _pageController = PageController(viewportFraction: 0.85);
   var currentPageitem = 0.0;
   double height = Dimensions.pageViewContainer;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -112,7 +111,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),
-           shrinkWrap: true,
+          shrinkWrap: true,
           itemCount: 10,
           itemBuilder: (context, index) => Container(
             margin: EdgeInsets.only(
@@ -125,8 +124,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   height: 120,
                   width: 120,
                   decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(Dimensions.radius20),
+                      borderRadius: BorderRadius.circular(Dimensions.radius20),
                       color: Colors.white,
                       image: DecorationImage(
                           fit: BoxFit.cover,
@@ -143,11 +141,34 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           bottomRight: Radius.circular(Dimensions.radius20)),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.only(
-                          left: Dimensions.width10,
-                          right: Dimensions.width10),
-                      child: AppColumn(text: "Chinese Side",)
-                       ),
+                        padding: EdgeInsets.only(
+                            left: Dimensions.width10,
+                            right: Dimensions.width10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BigText(text: "Chinese Side"),
+                            SmallText(text: "Chinese food service "),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                IconWithText(
+                                    text: "Normal",
+                                    icon: Icons.circle_rounded,
+                                    iconColor: Colors.orange),
+                                IconWithText(
+                                    text: "1.2Km",
+                                    icon: Icons.location_pin,
+                                    iconColor: Colors.green),
+                                IconWithText(
+                                    text: "32min",
+                                    icon: Icons.timer_sharp,
+                                    iconColor: Colors.red),
+                              ],
+                            )
+                          ],
+                        )),
                   ),
                 ),
               ],

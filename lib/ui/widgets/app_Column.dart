@@ -6,6 +6,8 @@ import 'package:food_app/ui/widgets/icon_with_text.dart';
 import 'package:food_app/ui/widgets/small_text.dart';
 import 'package:food_app/utils/dimensions.dart';
 
+import '../../utils/colors.dart';
+
 class AppColumn extends StatelessWidget {
   final String text;
   const AppColumn({super.key, required this.text});
@@ -14,21 +16,40 @@ class AppColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        BigText(
-          text: text,
-          size: Dimensions.font26,
-        ),
+        // T I T L E
+        BigText(text: "Spaghetti"),
         SizedBox(
           height: Dimensions.height10,
         ),
-        SmallText(text: "With chinese characteristics"),
-        SizedBox(
-          height: Dimensions.height10,
-        ),
+        // R A T I N G   &  C O M M E N T S
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Wrap(
+              children: List<Icon>.generate(
+                  5,
+                  (index) => Icon(
+                        Icons.star,
+                        color: primarycolor,
+                        size: 18,
+                      )),
+            ),
+            SizedBox(
+              width: 15,
+            ),
+            SmallText(text: "4.7", size: 15),
+            SizedBox(
+              width: 15,
+            ),
+            SmallText(text: "48 comments", size: 15),
+          ],
+        ),
+        SizedBox(
+          height: Dimensions.height10,
+        ),
+        // I C O N    &   T E X T
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconWithText(
                 text: "Normal",

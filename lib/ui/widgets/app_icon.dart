@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/utils/colors.dart';
 import 'package:food_app/utils/dimensions.dart';
 
 class AppIcon extends StatelessWidget {
@@ -19,8 +20,7 @@ class AppIcon extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(size / 2),
-          color: backgroundcolor),
+          borderRadius: BorderRadius.circular(size / 2), color: greyLighter),
       child: Icon(
         icon,
         color: iconColor,

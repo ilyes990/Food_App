@@ -5,7 +5,7 @@ class SmallText extends StatelessWidget {
   final String text;
   final double size;
   final double height;
-  const SmallText( {
+  const SmallText({
     super.key,
     this.color = const Color.fromARGB(255, 151, 151, 151),
     required this.text,
@@ -17,10 +17,7 @@ class SmallText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        fontSize: size,
-        color: color
-      ),
+      style: TextStyle(fontSize: size, color: color),
     );
   }
 }

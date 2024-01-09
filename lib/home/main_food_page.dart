@@ -42,7 +42,8 @@ class _MainfoodPageState extends State<MainfoodPage> {
                       ),
                     ],
                   ),
-                  Container(width: 45,
+                  Container(
+                    width: 45,
                     height: 45,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
